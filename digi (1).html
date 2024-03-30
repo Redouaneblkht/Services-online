@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Boutique en ligne</title>
+    <link rel="stylesheet" href="dogi.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+</head>
+<body>
+    
+<div class="navbar">
+    <a href="digi.html"><i class="fas fa-home"></i> Accueil</a>
+    <a href="down.html"> <i class="fab fa-android"></i> Telech apps</a>
+    <a onclick="toggleContactInfo()"> <i class="fas fa-phone"></i> Contactez-nous</a>
+    <a href="#help"> <i class="fas fa-question-circle"></i>Aide</a>
+</div>
+
+<br><br><br>
+<div id="contactInfo" style="display: none;">
+    <button><a href="mailto: redouaneblkht@gmail.com"><i class="fas fa-envelope"></i> Email</a></button>
+    <button><a href="https://wa.me/+213659301935" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></button>
+</div>
+
+<h1 style="color: blue; background: skyblue;">Boutique en ligne</h1>
+
+<div class="container">
+    <h2>IRON TV</h2>
+    <a href="https://wa.me/+213659301935">
+        <img src="iron.jpg" alt="iron tv">
+    </a>
+    <p>Prix du produit: <span id="productPriceNew">30</span> euro</p>
+    <p>Durée d'abonnement:
+        <select id="subscriptionDurationNew" onchange="updatePriceNew()">
+            <option value="30">12 mois</option>
+            <option value="20">6 mois</option>
+            <option value="15">3 mois</option>
+            <option value="9">1 mois</option>
+        </select>
+    </p>
+    <p>Moyen de paiement: <button><i class="fab fa-paypal"></i> Paypal</button></p>
+    <button onclick="redirectToWhatsAppNew()"><i class="fab fa-whatsapp"></i> Achetez maintenant</button>
+</div>
+
+<div class="container">
+    <h2>ATLAS ONTV PRO</h2>
+    <a href="https://wa.me/+213659301935">
+        <img src="atlas.jpg" alt="atlas tv">
+    </a>
+    <p>Prix du produit: <span id="productPriceAtlas">30</span> euro</p>
+    <p>Durée d'abonnement:
+        <select id="subscriptionDurationAtlas" onchange="updatePriceAtlas()">
+            <option value="28">12 mois</option>
+            <option value="15">6 mois</option>
+            <option value="8">3 mois</option>
+            <option value="5">1 mois</option>
+        </select>
+    </p>
+    <p>Moyen de paiement: <button><i class="fab fa-paypal"></i> Paypal</button></p>
+    <button onclick="redirectToWhatsAppNew()"><i class="fab fa-whatsapp"></i> Achetez maintenant</button>
+</div>
+
+<div class="container">
+    <h2>ORCA PRO PLUS</h2>
+    <a href="https://wa.me/+213659301935">
+        <img src="orca.jpg" alt="orca pro">
+    </a>
+    <p>Prix du produit: <span id="productPriceOrca">40</span> euro</p>
+    <p>Durée d'abonnement:
+        <select id="subscriptionDurationOrca" onchange="updatePriceOrca()">
+            <option value="40">
+            <option value="40">12 mois</option>
+            <option value="22">6 mois</option>
+            <option value="12">3 mois</option>
+            <option value="7">1 mois</option>
+        </select>
+    </p>
+    <p>Moyen de paiement: <button><i class="fab fa-paypal"></i> Paypal</button></p>
+    <button onclick="redirectToWhatsAppNew()"><i class="fab fa-whatsapp"></i> Achetez maintenant</button>
+</div>
+
+<div class="container">
+    <h2>KING 4K</h2>
+    <a href="https://wa.me/+213659301935">
+        <img src="king.jpg" alt="king 4k">
+    </a>
+    <p>Prix du produit: <span id="productPriceKing">38</span> euro</p>
+    <p>Durée d'abonnement:
+        <select id="subscriptionDurationKing" onchange="updatePriceKing()">
+            <option value="38">12 mois</option>
+            <option value="21">6 mois</option>
+            <option value="11">3 mois</option>
+            <option value="6">1 mois</option>
+        </select>
+    </p>
+    <p>Moyen de paiement: <button><i class="fab fa-paypal"></i> Paypal</button></p>
+    <button onclick="redirectToWhatsAppNew()"><i class="fab fa-whatsapp"></i> Achetez maintenant</button>
+</div>
+
+<script>
+    function toggleContactInfo() {
+        var info = document.getElementById("contactInfo");
+        if (info.style.display === "none") {
+            info.style.display = "block";
+        } else {
+            info.style.display = "none";
+        }
+    }
+
+    function updatePriceNew() {
+        var subscriptionDuration = document.getElementById("subscriptionDurationNew").value;
+        var price = document.getElementById("productPriceNew");
+        price.textContent = subscriptionDuration; // This logic may need adjustment based on actual pricing
+    }
+
+    function updatePriceAtlas() {
+        var subscriptionDuration = document.getElementById("subscriptionDurationAtlas").value;
+        var price = document.getElementById("productPriceAtlas");
+        price.textContent = subscriptionDuration; // Adjust according to your pricing logic
+    }
+
+    function updatePriceOrca() {
+        var subscriptionDuration = document.getElementById("subscriptionDurationOrca").value;
+        var price = document.getElementById("productPriceOrca");
+        price.textContent = subscriptionDuration; // Adjust based on your pricing logic
+    }
+
+    function updatePriceKing() {
+        var subscriptionDuration = document.getElementById("subscriptionDurationKing").value;
+        var price = document.getElementById("productPriceKing");
+        price.textContent = subscriptionDuration; // Modify as per your pricing structure
+    }
+
+    function redirectToWhatsAppNew() {
+        // Ensure this method properly reflects the item being purchased
+        var whatsappURL = "https://wa.me/+213659301935?text=" + encodeURIComponent("I'm interested in purchasing one of your products.");
+        window.open(whatsappURL, '_blank');
+    }
+</script>
+
+<footer>
+    <div class="social-links">
+        <!-- Add your social media links here -->
+        <a href="https://www.facebook.com/profile.php?id=61555088483805&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="https://www.twitter.com/redouaneblkht" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://youtube.com/@redouaneelectrodz" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <!-- Add more links as needed -->
+    </div>
+</footer>
+
+</body>
+</html>
